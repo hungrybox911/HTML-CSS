@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aradhya Dev Nepal - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f0f10;
+      --text-light: #e2e2e2;
+      --accent: #ff5a3c;
+      --card-bg: #1c1c1e;
+      --footer-bg: #1c1c1e;
+      --footer-text: #e2e2e2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: var(--card-bg);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: slideDown 1s ease forwards;
+    }
+
+    header h1 {
+      color: var(--accent);
+    }
+
+    nav a {
+      color: var(--text-light);
+      margin: 0 1rem;
+      text-decoration: none;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      left: 0;
+      bottom: -4px;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .theme-toggle,
+    .download-btn-header {
+      background: var(--accent);
+      border: none;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .intro {
+      text-align: center;
+    }
+
+    .intro img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 0 6px rgba(255, 90, 60, 0.25);
+      transition: transform 0.4s;
+    }
+
+    .intro img:hover {
+      transform: scale(1.05);
+    }
+
+    .intro h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #aaa;
+      margin-bottom: 1rem;
+    
+      opacity: 0.6;
+    }
+
+    .skills {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      margin-top: 1rem;
+      justify-content: center;
+    }
+
+    .skills li {
+      background: #2d2d30;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      color: var(--accent);
+      transition: background 0.3s;
+    }
+
+    .skills li:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .projects {
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s, background 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .socials a {
+      display: inline-block;
+      margin-right: 1rem;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .socials a:hover {
+      color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .download-btn:hover {
+      background: #e65c00;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aradhya Dev Nepal</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="https://drive.google.com/file/d/1padHss7KRj9oxMVpv61ZiTDxFU2RR_jt/view?usp=sharing"target="_blank" class="download-btn-header" download>Download Resume</a>
+      <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="intro" id="about">
+      <img src="https://scontent.fktm1-1.fna.fbcdn.net/v/t51.75761-15/510956708_17930521437063346_4191582432672611501_n.webp?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFHKPIlPxltNT3_-kfezjHWxDAZfh_VDLDEMBl-H9UMsBepUiMOLfz8ttRVMQQapwbp8Ko0k_-5TTIAhtZ0NHjk&_nc_ohc=tlUz4HvGh_YQ7kNvwEwQtJR&_nc_oc=Admm4rPImZCg-ADquQ7QF2Ngg22viLfTk0k5hJepmYXBQt0CuEk9hquJZ7O6UXDav8o&_nc_zt=23&_nc_ht=scontent.fktm1-1.fna&_nc_gid=Fe2HqPIDKRdcFDhBRJPctw&oh=00_AfS01fcfNdnidDzfN6HVt76I2gTsiVTfPG5UkHfB19g9mg&oe=687EFC3D" alt="Aradhya Dev Nepal">
+      <h1>Hi, I'm Aradhya</h1>
+      <p class="quote">"praise 'The FOOL'"</p>
+      <p>Just a beginner into the world of developing.
+"Hi, I'm Aradhya, an IT Engineering student with a strong interest in technology, coding, and cybersecurity. I'm passionate about solving real-world problems through innovative digital solutions and constantly learning new tools and technologies to stay ahead in the tech world.</p>
+      
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS (a bit)</li>
+      </ul>
+    </section>
+
+    <section class="projects" id="projects">
+      <h2>Projects</h2>
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>This responsive personal website built with HTML and CSS showcases my skills, projects, and social links.</p>
+      </div>
+      <div class="project-card">
+        <h3>Beginner Web Dev Repo</h3>
+        <p>A starter-level web dev project available on <a href="https://github.com/hungrybox911" target="_blank">GitHub</a> where I practice HTML/CSS fundamentals.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Connect</h2>
+      <div class="socials">
+        <a href="mailto:aradh01nepal@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/aradhya-upadhyaya-462499349" target="_blank">LinkedIn</a>
+        <a href="https://github.com/hungrybox911" target="_blank">GitHub</a>
+        <a href="https://www.facebook.com/aradhya.nepal04" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/_hungrybox04/" target="_blank">Instagram</a>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    &copy; 2025 Aradhya Dev Nepal. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const footer = document.querySelector('.footer');
+      const projectCards = document.querySelectorAll('.project-card');
+      const currentBg = getComputedStyle(root).getPropertyValue('--bg-dark').trim();
+
+      if (currentBg === '#0f0f10') {
+        // Switch to light
+        root.style.setProperty('--bg-dark', '#ffffff');
+        root.style.setProperty('--text-light', '#222');
+        root.style.setProperty('--card-bg', '#f2f2f2');
+        root.style.setProperty('--footer-bg', '#f0f0f0');
+        root.style.setProperty('--footer-text', '#222');
+      } else {
+        // Switch to dark
+        root.style.setProperty('--bg-dark', '#0f0f10');
+        root.style.setProperty('--text-light', '#e2e2e2');
+        root.style.setProperty('--card-bg', '#1c1c1e');
+        root.style.setProperty('--footer-bg', '#1c1c1e');
+        root.style.setProperty('--footer-text', '#e2e2e2');
+      }
+
+      // Force body and footer update
+      document.body.style.backgroundColor = getComputedStyle(root).getPropertyValue('--bg-dark');
+      document.body.style.color = getComputedStyle(root).getPropertyValue('--text-light');
+      footer.style.backgroundColor = getComputedStyle(root).getPropertyValue('--footer-bg');
+      footer.style.color = getComputedStyle(root).getPropertyValue('--footer-text');
+
+      projectCards.forEach(card => {
+        card.style.backgroundColor = getComputedStyle(root).getPropertyValue('--card-bg');
+      });
+    }
+  </script>
+</body>
+</html>
